@@ -4,10 +4,10 @@ PShard
 Shards data between multiple virtual shards and multiple real shards using PDO.
 
 Usage
-======
+------
 
 1. Create tables with data:
-```sql
+```mysql
 CREATE TABLE real_shard (
     'id' INT(10) NOT NULL AUTO_INCREMENT,
     'name' VARCHAR(50) NOT NULL,
@@ -48,6 +48,7 @@ $shardMap = new \PDO(
 
 3. Create PShard instance and use it for queries:
 ```php
+<?php
 $pShard = new \PShard\PShard($shardMap);
 $statement = $pShard->getConnectionForKey($user['mail'])
     ->prepare('INSERT INTO users (name, mail) VALUES (:name, :mail)');
