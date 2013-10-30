@@ -7,6 +7,7 @@ Usage
 ------
 
 1. Create tables with data:
+
 ```mysql
 CREATE TABLE real_shard (
     'id' INT(10) NOT NULL AUTO_INCREMENT,
@@ -31,6 +32,7 @@ INSERT INTO virtual_shard VALUES (NULL, 'virtual_shard1', 'real_shard1');
 INSERT INTO virtual_shard VALUES (NULL, 'virtual_shard2', 'real_shard1');
 ...
 INSERT INTO virtual_shard VALUES (NULL, 'virtual_shardN', 'real_shard1');
+
 ```
 
 2. Create PDO instance for database containing shards map:
@@ -47,6 +49,7 @@ $shardMap = new \PDO(
 ```
 
 3. Create PShard instance and use it for queries:
+
 ```php
 <?php
 $pShard = new \PShard\PShard($shardMap);
@@ -55,4 +58,5 @@ $statement = $pShard->getConnectionForKey($user['mail'])
 $statement->bindValue('name', $user['name'], \PDO::PARAM_STR);
 $statement->bindValue('mail', $user['mail'], \PDO::PARAM_STR);
 $statement->execute();
+
 ```
