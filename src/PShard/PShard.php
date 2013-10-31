@@ -1,4 +1,6 @@
 <?php
+namespace PShard;
+
 /**
  * Class for sharding data between PDO instances
  * using scheme with N virtual and M real shards.
@@ -46,7 +48,7 @@ class PShard
     /**
      * Returns connection resource for given key
      *
-     * @param string                      $key
+     * @param  string            $key
      * @return array('tableName' => \Pdo)
      */
     public function getConnectionForKey($key = '')
@@ -62,7 +64,7 @@ class PShard
     /**
      * Returns connection resource for given shardId and shardOptions
      *
-     * @param array $shardOptions
+     * @param  array $shardOptions
      * @return \PDO
      */
     protected function getShardConnection(array $shardOptions)
@@ -94,7 +96,7 @@ class PShard
      *    'virtual'   => 'Y',
      * ]
      *
-     * @param string $key
+     * @param  string $key
      * @return string
      */
     protected function getVirtualShard($key = '')
@@ -108,7 +110,7 @@ class PShard
     /**
      * Returns real shard address for virtual shard id
      *
-     * @param string $virtual
+     * @param  string $virtual
      * @return array
      */
     protected function getRealShard($virtual)
@@ -121,7 +123,7 @@ class PShard
     /**
      * Returns decimal representation of key
      *
-     * @param string $key
+     * @param  string  $key
      * @return integer
      */
     protected function getDecKey($key = '')
