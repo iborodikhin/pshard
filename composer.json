@@ -1,0 +1,25 @@
+{
+    "name": "iborodikhin/pshard",
+    "version": "0.1",
+    "type": "library",
+    "description": "Simple sharding library for PDO.",
+    "keywords": [
+        "sharding",
+        "pdo"
+    ],
+    "homepage": "http://github.com/iborodikhin/pshard",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Igor Borodikhin",
+            "email": "iborodikhin@gmail.com",
+            "homepage": "http://iborodikhin.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.3"
+    },
+    "autoload": {
+        "psr-0": { "PShard\\": "src/" }
+    }
+}
