@@ -56,9 +56,7 @@ class PShard
         $virtual = $this->getVirtualShard($key);
         $real    = $this->getRealShard($virtual);
 
-        return [
-            $virtual => $this->getShardConnection($real),
-        ];
+        return $this->getShardConnection($real);
     }
 
     /**
@@ -101,7 +99,7 @@ class PShard
      */
     protected function getVirtualShard($key = '')
     {
-        $key     = ($this->getDecKey($key) % count($this->shardsMap['virtual']));
+        $key     = ($this->getDecKey($key) % count($this->getShardsMap()['virtual']));
         $virtual = $this->getShardsMap()['virtual'];
 
         return array_keys($virtual)[$key];
