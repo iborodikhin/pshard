@@ -16,10 +16,14 @@
             "homepage": "http://iborodikhin.net"
         }
     ],
+    "autoload": {
+        "psr-4": { "PShard\\": ["src/", "test/"] }
+    },
     "require": {
         "php": ">=5.4"
     },
-    "autoload": {
-        "psr-0": { "PShard\\": "src/" }
+    "require-dev": {
+        "phpunit/phpunit": "^5.2",
+        "fzaninotto/faker": "^1.4"
     }
 }

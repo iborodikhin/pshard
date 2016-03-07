@@ -49,7 +49,7 @@ class PShard
      * Returns connection resource for given key
      *
      * @param  string            $key
-     * @return array('tableName' => \Pdo)
+     * @return \PDO
      */
     public function getConnectionForKey($key = '')
     {
