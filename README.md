@@ -1,5 +1,6 @@
 PShard
 ======
+[![Build Status](https://travis-ci.org/iborodikhin/pshard.png?branch=master)](https://travis-ci.org/iborodikhin/pshard)
 
 Shards data between multiple virtual shards and multiple real shards using PDO.
 
